@@ -2,8 +2,9 @@ public class Martes {
   public static void main(String[] args) {
 
     int a, b, c;
-    System.out.println(AnsiColors.RED + "TABLA DE PITAGORAS\n");
-    System.out.print("      || ");
+    System.out.println(AnsiColors.RED.TXT + AnsiColors.GREEN.BG + "TABLA DE PITAGORAS");
+    System.out.print("\r" + AnsiColors.RESET);
+    System.out.print(Tabla.TOPLEFT + Tabla.HORIZONTAL + "      || ");
     for (int j = 1; j <= 10; j++) {
       System.out.print("" + rellena(String.valueOf(j), 4) + "  |");
     }
