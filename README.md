@@ -29,7 +29,78 @@ Ejemplo práctico:
 * Atributos: nombre (Ana), edad (25).
 * Métodos: saludar().
 
----
+## Tema 2: Modelado y UML
+**Concepto**: UML (Lenguaje de Modelado Unificado) es un lenguaje de modelado para diseñar sistemas de software visualmente. Incluye varios tipos de diagramas, como diagramas de clases, de secuencia, de casos de uso, entre otros.
+
+### Diagrama de Clases UML
+El diagrama de clases es uno de los diagramas más importantes en UML. Representa la estructura estática del sistema mostrando las clases, sus atributos, métodos y las relaciones entre ellas.
+
+**Ejemplo**: Diagrama de clases UML para el ejemplo anterior.
+```
++-----------------+
+|      Animal     |
++-----------------+
+| - nombre: String|
++-----------------+
+| + hacerSonido() |
++-----------------+
+```
+
+### Herencia en UML
+La herencia es una relación entre clases donde una clase (subclase) hereda atributos y métodos de otra clase (superclase). En UML, la herencia se representa con una línea con un triángulo vacío apuntando hacia la superclase.
+
+**Ejemplo**: Diagrama de clases UML con herencia.
+```
++-----------------+        +-----------------+
+|      Animal     |        |      Perro      |
++-----------------+        +-----------------+
+| - nombre: String|        |                 |
++-----------------+        +-----------------+
+| + hacerSonido() |        | + moverCola()   |
++-----------------+        +-----------------+
+           ^                        |
+           |                        |
+           +------------------------+
+```
+
+### Relaciones entre Clases en UML
+Las clases pueden relacionarse de varias maneras en UML:
+
+1. **Asociación**: Representa una relación entre dos clases. Se dibuja como una línea simple entre las clases.
+2. **Agregación**: Es un tipo de asociación que indica que una clase es parte de otra clase. Se dibuja como una línea con un rombo vacío en el extremo de la clase contenedora.
+3. **Composición**: Es una forma más fuerte de agregación donde la vida del objeto contenido depende del objeto contenedor. Se dibuja como una línea con un rombo lleno en el extremo de la clase contenedora.
+
+**Ejemplo**: Diagrama de clases UML con diferentes relaciones.
+```
++-----------------+        +-----------------+        +-----------------+
+|      Persona    |        |      Trabajo    |        |      Coche      |
++-----------------+        +-----------------+        +-----------------+
+| - nombre: String|        | - puesto: String|        | - marca: String |
+| - edad: int     |        | - empleado:     |<>------| - motor: Motor  |
++-----------------+        |   Persona       |        +-----------------+
+| + saludar()     |        +-----------------+        | + mostrarDetalles()|
++-----------------+        | + mostrarDetalles()|     +-----------------+
+           |                        |                        |
+           +------------------------+                        |
+                                                            |
+                                                            |
+                                                            |
+                                                            +-----------------+
+                                                            |      Motor      |
+                                                            +-----------------+
+                                                            | - tipo: String  |
+                                                            +-----------------+
+                                                            | + getTipo()     |
+                                                            +-----------------+
+```
+
+En este diagrama:
+- **Persona** tiene una relación de asociación con **Trabajo**.
+- **Trabajo** tiene una relación de agregación con **Persona**.
+- **Coche** tiene una relación de composición con **Motor**.
+
+Estas relaciones ayudan a modelar cómo las clases interactúan y dependen unas de otras en el sistema.
+
 ## Tema 3 - Lenguaje orientado a objetos*
 
 El *lenguaje orientado a objetos (OOP)* es un paradigma de programación que organiza el código en torno a objetos, los cuales representan entidades del mundo real o conceptos abstractos. En Java, este enfoque es central y se basa en principios fundamentales que facilitan la creación de software modular, reutilizable y fácil de mantener.
