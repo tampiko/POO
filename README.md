@@ -1,5 +1,8 @@
 # POO
 
+#Temario
+Acceso al curso gratuito de vsCode de fernando herrera: https://fernando-herrera.com/course/visual-studio-code
+
 ## Tema 1 - Fundamentos de programación orientada a objetos
 
 ### Fundamentos de programación orientada a objetos
