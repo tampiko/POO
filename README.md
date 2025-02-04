@@ -4,6 +4,7 @@
 [Curso gratuito de vsCode de Fernando Herrera](https://fernando-herrera.com/course/visual-studio-code)
 
 Videos del canal hola mundo donde habla de vsCode:
+
 [Mas de 50 hacks para VS Code](https://youtu.be/IU7YWGqo164?si=3im-U6pOmH77pxUs)
 
 [Como usar VSCode para que sea Asombroso](https://youtu.be/HiVnGgYudLY?si=LdDjWz6bafjL6-1i)
