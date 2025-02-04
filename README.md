@@ -1,7 +1,16 @@
 # POO
 
+
+[Curso gratuito de vsCode de Fernando Herrera](https://fernando-herrera.com/course/visual-studio-code)
+
+Videos del canal hola mundo donde habla de vsCode:
+[Mas de 50 hacks para VS Code](https://youtu.be/IU7YWGqo164?si=3im-U6pOmH77pxUs)
+
+[Como usar VSCode para que sea Asombroso](https://youtu.be/HiVnGgYudLY?si=LdDjWz6bafjL6-1i)
+
+[Aprende VsCode ahora, curso completo desde cero](https://youtu.be/Ei1y51K8jQk?si=0gEMJf_BPvwRKSH2)
+
 #Temario
-Acceso al curso gratuito de vsCode de fernando herrera: https://fernando-herrera.com/course/visual-studio-code
 
 ## Tema 1 - Fundamentos de programación orientada a objetos
 
