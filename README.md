@@ -11,6 +11,29 @@ Videos del canal hola mundo donde habla de vsCode:
 
 [Aprende VsCode ahora, curso completo desde cero](https://youtu.be/Ei1y51K8jQk?si=0gEMJf_BPvwRKSH2)
 
+## GIT
+
+* Abrir una terminal y escribir ``` git ```
+
+* Si no se tiene instalado, descargarlo del sitio [git-scm](https://git-scm.com/).
+
+* Instalarlo
+
+### Configuración Inicial
+* Usuario: Es el nombre de quien esta haciendo los cambios
+    ```
+    git config --global user.name "Tu Nombre"
+    ```
+* Correo: Es el correo del usuario
+    ```
+    git config --global user.mail "tucorreo@mail.com"
+    ```
+
+### Inicilizando un repositorio
+
+Para inicializar un repositorio se usa el comando ```git init```
+
+
 #Temario
 
 ## Tema 1 - Fundamentos de programación orientada a objetos
