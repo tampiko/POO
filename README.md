@@ -11,6 +11,9 @@ Videos del canal hola mundo donde habla de vsCode:
 
 [Aprende VsCode ahora, curso completo desde cero](https://youtu.be/Ei1y51K8jQk?si=0gEMJf_BPvwRKSH2)
 
+[VsCode Keyboard shortcuts for Windows](https://quickref.me/vscode.html)
+
+
 ## GIT
 
 * Abrir una terminal y escribir ``` git ```
