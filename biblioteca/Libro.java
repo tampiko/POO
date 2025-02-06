@@ -1,17 +1,17 @@
 
 public class Libro {
+
     private String titulo;
     private String autor;
     private int stock;
-    private Genero genero;
 
-    public Libro(String titulo, String autor, int stock, Genero genero) {
+    public Libro(String titulo, String autor, int stock) {
         this.titulo = titulo;
         this.autor = autor;
         this.stock = stock;
     }
 
-    void prestarLibro() {
+    public void prestarLibro() {
         if (stock > 0) {
             stock--;
         } else {
@@ -19,7 +19,7 @@ public class Libro {
         }
     }
 
-    void devolverLibro() {
+    public void devolverLibro() {
         stock++;
     }
 
