@@ -1,35 +1,44 @@
-
 public class Pizza {
-
-    private int id;
     private String nombre;
-    private String ingredientes;
     private double precio;
     private int stock;
 
-    public Pizza(int id, String nombre, String ingredientes, double precio, int stock) {
-        this.id = id;
+    public Pizza(String nombre, double precio, int stock) {
         this.nombre = nombre;
-        this.ingredientes = ingredientes;
         this.precio = precio;
         this.stock = stock;
     }
 
-    public int getId() {return id;}
-    public String getNombre() {return nombre;}
-    public String getIngredientes() {return ingredientes;}
-    public double getPrecio() {return precio;}
-    public int getStock() {return stock;}
-
-    public boolean vender() {
-        if (stock > 0) {
-            stock--;
-            return true;
-        }
-        return false;
+    // Métodos getters y setters
+    public String getNombre() {
+        return nombre;
     }
 
-    public void reponer(int cantidad) {
-        stock += cantidad;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public void reducirStock(int cantidad) {
+        if (stock >= cantidad) {
+            stock -= cantidad;
+        } else {
+            System.out.println("Stock insuficiente para " + nombre);
+        }
     }
 }
