@@ -1,4 +1,6 @@
+
 public class Pizza {
+
     private String nombre;
     private double precio;
     private int stock;
@@ -40,5 +42,9 @@ public class Pizza {
         } else {
             System.out.println("Stock insuficiente para " + nombre);
         }
+    }
+
+    public void hacerMas(Integer cantidad) {
+        this.stock += cantidad;
     }
 }
