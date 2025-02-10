@@ -4,7 +4,7 @@ public class Inicio {
         Pizzeria pizzeria = new Pizzeria();
 
         // Crear pizzas y añadir al menú
-        Pizza margarita = new Pizza("Margarita", 8.5, 10);
+        Pizza margarita = new Pizza("Hawaiana", 8.5, 10);
         Pizza pepperoni = new Pizza("Pepperoni", 9.5, 5);
         pizzeria.agregarPizzaMenu(margarita);
         pizzeria.agregarPizzaMenu(pepperoni);
@@ -29,4 +29,5 @@ public class Inicio {
         // Mostrar menú actualizado
         pizzeria.mostrarMenu();
     }
+
 }
