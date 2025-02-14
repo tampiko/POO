@@ -2,65 +2,62 @@ import java.util.Scanner;
 
 public class StarWars {
     public static void main(String[] args) {
-        /*
-         * Generador de Nombre de Star Wars
-         * 
-         * Toma:
-         * 1. Las tres primeras letras de tu apellido
-         * 2. Las dos primeras letras de tu nombre
-         * 3. Tu mes de nacimiento para tu planeta de origen
-         * 
-         * 1️⃣ Primera parte del nombre (Tres primeras letras del apellido)
-         * • Pérez → Per
-         * • Gutiérrez → Gut
-         * • Ramírez → Ram
-         * • Fernández → Fer
-         * • Castillo → Cas
-         * 
-         * 2️⃣ Segunda parte del nombre (Dos primeras letras del nombre)
-         * • Carlos → Ca
-         * • Mariana → Ma
-         * • José → Jo
-         * • Sofía → So
-         * • Daniel → Da
-         * 
-         * Harry Cruz
-         * 
-         * CRUHA
-         * 
-         * 📌 Ejemplo: Si te llamas Carlos Pérez, tu nombre sería “Perca”.
-         * 
-         * ¿De qué planeta eres? (Según tu mes de nacimiento)
-         * • Enero → Naboo
-         * • Febrero → Coruscant
-         * • Marzo → Mandalore
-         * • Abril → Kashyyyk
-         * • Mayo → Tatooine
-         * • Junio → Alderaan
-         * • Julio → Dagobah
-         * • Agosto → Endor
-         * • Septiembre → Hoth
-         * • Octubre → Mustafar
-         * • Noviembre → Bespin
-         * • Diciembre → Jakku
-         * 
-         * 📌 Ejemplo: Si naciste en mayo, eres de Tatooine.
-         */
-        System.out.println("** Star Wars **");
-
+        Scanner sc = new Scanner(System.in);
         String nombre = "";
         String apellido = "";
+        String nombreSw = "";
+        String planeta = "";
         String mes = "";
 
-        Scanner sc = new Scanner(System.in);
+        System.out.println("***** Star Wars *****");
+        System.out.print("Ingresa Tu Primer Nombre: ");
+        nombre = sc.nextLine();
 
-        // nombre = sc.nextLine();
-        // apellido = sc.nextLine();
-        // mes = sc.nextLine();
+        System.out.print("Ingresa Tu Primer Apellido: ");
+        apellido = sc.nextLine();
 
-        nombre = "Carlos";
-        nombre.substring(0, 3);
-        System.out.println(nombre.substring(0, 3));
+        System.out.print("En qué mes Naciste? ");
+        mes = sc.nextLine();
 
+        switch (mes.toLowerCase()) {
+            case "enero":
+                planeta = "Naboo";
+                break;
+            case "febrero":
+                planeta = "Coruscant";
+                break;
+            case "marzo":
+                planeta = "Mandalore";
+                break;
+            case "abril":
+                planeta = "Kashyyyk";
+                break;
+            case "mayo":
+                planeta = "Tatooine";
+                break;
+            case "junio":
+                planeta = "Alderaan";
+                break;
+            case "julio":
+                planeta = "Dagobah";
+                break;
+            case "agosto":
+                planeta = "Endor";
+                break;
+            case "septiembre":
+                planeta = "Hoth";
+                break;
+            case "octubre":
+                planeta = "Mustafar";
+                break;
+            case "noviembre":
+                planeta = "Bespin";
+                break;
+            case "diciembre":
+                planeta = "Jakku";
+                break;
+        }
+        nombreSw = apellido.substring(0, 3) + nombre.substring(0, 2);
+        System.out.println("Tu Nombre de Star Wars es : " + nombreSw + ", y eres del planteta " + planeta);
     }
 }
