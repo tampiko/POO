@@ -12,9 +12,9 @@ public class Programa {
         pintaMenuPrincipal();
         opcionMenu = Extras.getNumero("Seleccione una Opción: ");
 
-        // Crear pizzas y añadir al menú
-        // pizzeria.agregarPizzaMenu(hawaiana);
-        // pizzeria.agregarPizzaMenu(pepperoni);
+        System.out.println(pizzas.get(0).getStock());
+        pizzas.get(0).reducirStock(1);
+        System.out.println(pizzas.get(0).getStock());
 
         // Mostrar menú
         pizzeria.mostrarMenu();
