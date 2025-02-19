@@ -1,37 +1,41 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Programa {
+    private static Pizzeria pizzeria = new Pizzeria();
+    private static ArrayList<Pizza> pizzas = crearPizzas();
+    private static ArrayList<Cliente> clientes = crearClientes();
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        // Crear pizzería
         Integer opcionMenu;
         Extras.limpiarPantalla();
-        Pizzeria pizzeria = new Pizzeria();
-        ArrayList<Pizza> pizzas = crearPizzas();
-        ArrayList<Cliente> clientes = crearClientes();
+        pizzeria.getMenu().addAll(pizzas);
         pintaBienvenida();
-        pintaMenuPrincipal();
-        opcionMenu = Extras.getNumero("Seleccione una Opción: ");
 
-        System.out.println(pizzas.get(0).getStock());
-        pizzas.get(0).reducirStock(1);
-        System.out.println(pizzas.get(0).getStock());
+        do {
+            menuPrincipal();
+            opcionMenu = Extras.getNumero("Seleccione una Opción: ");
+            Extras.limpiarPantalla();
+            pintaBienvenida();
 
-        // Mostrar menú
-        pizzeria.mostrarMenu();
-
-        // Crear pedido
-        // Pedido pedido1 = new Pedido(cliente1);
-        // pedido1.agregarPizza(hawaiana, 2);
-        // pedido1.agregarPizza(pepperoni, 1);
-
-        // Registrar pedido en la pizzería
-        // pizzeria.registrarPedido(pedido1);
-
-        // Mostrar total del pedido
-        // System.out.println("Total del pedido: $" + pedido1.getTotal());
-
-        // Mostrar menú actualizado
-        pizzeria.mostrarMenu();
+            switch (opcionMenu) {
+                case 1:
+                    menuPizza();
+                    break;
+                case 2:
+                    menuClientes();
+                    break;
+                case 3:
+                    menuPedidos();
+                    break;
+                case 4:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opción no válida. Intente de nuevo.");
+            }
+        } while (opcionMenu != 4);
     }
 
     public static ArrayList<Pizza> crearPizzas() {
@@ -60,18 +64,170 @@ public class Programa {
 
     public static void pintaBienvenida() {
         System.out.println("");
-        System.out.println("Bienvenido a la Pizzeria \"Delit\"");
+        System.out.println("===== Pizzeria \"Delit\" =====");
         System.out.println("");
     }
 
-    public static void pintaMenuPrincipal() {
+    public static void menuPrincipal() {
+        System.out.println("     Menu Principal");
         System.out.println("");
-        System.out.println("1. Ver menú");
-        System.out.println("2. Ver Clientes");
-        System.out.println("3. Realizar pedido");
-        System.out.println("4. Ver pedidos");
-        System.out.println("5. Salir");
+        System.out.println("1. Pizza");
+        System.out.println("2. Clientes");
+        System.out.println("3. Pedidos");
+        System.out.println("4. Salir");
         System.out.println("");
     }
 
+    public static void menuPizza() {
+        Integer opcionPizza;
+        do {
+            System.out.println("** Pizzas **");
+            System.out.println("");
+            System.out.println("1. Listar Pizzas");
+            System.out.println("2. Preparar Pizzas");
+            System.out.println("3. Salir");
+            System.out.println("");
+            opcionPizza = Extras.getNumero("Seleccione una Opción: ");
+            Extras.limpiarPantalla();
+
+            switch (opcionPizza) {
+                case 1:
+                    pintaBienvenida();
+                    pizzeria.mostrarMenu();
+                    break;
+                case 2:
+                    prepararPizza();
+                    break;
+                case 3:
+                    break;
+                default:
+                    System.out.println("Opción no válida. Intente de nuevo.");
+            }
+        } while (opcionPizza != 3);
+    }
+
+    public static void menuClientes() {
+        Integer opcionCliente;
+        do {
+            System.out.println("** Clientes **");
+            System.out.println("");
+            System.out.println("1. Listar Clientes");
+            System.out.println("2. Nuevo Cliente");
+            System.out.println("3. Salir");
+            System.out.println("");
+            opcionCliente = Extras.getNumero("Seleccione una Opción: ");
+            Extras.limpiarPantalla();
+
+            switch (opcionCliente) {
+                case 1:
+                    listarClientes();
+                    break;
+                case 2:
+                    nuevoCliente();
+                    break;
+                case 3:
+                    break;
+                default:
+                    System.out.println("Opción no válida. Intente de nuevo.");
+            }
+        } while (opcionCliente != 3);
+    }
+
+    public static void menuPedidos() {
+        Integer opcionPedido;
+        do {
+            System.out.println("** Pedidos **");
+            System.out.println("");
+            System.out.println("1. Listar Pedidos");
+            System.out.println("2. Nuevo Pedido");
+            System.out.println("3. Salir");
+            System.out.println("");
+            opcionPedido = Extras.getNumero("Seleccione una Opción: ");
+            Extras.limpiarPantalla();
+
+            switch (opcionPedido) {
+                case 1:
+                    listarPedidos();
+                    break;
+                case 2:
+                    nuevoPedido();
+                    break;
+                case 3:
+                    break;
+                default:
+                    System.out.println("Opción no válida. Intente de nuevo.");
+            }
+        } while (opcionPedido != 3);
+    }
+
+    public static void listarClientes() {
+        int i = 1;
+        for (Cliente cliente : clientes) {
+            System.out.println(
+                    i + ". " + cliente.getNombre() + " - " + cliente.getDireccion() + " - " + cliente.getTelefono());
+            i++;
+        }
+    }
+
+    public static void nuevoCliente() {
+        System.out.print("Nombre: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Dirección: ");
+        String direccion = scanner.nextLine();
+        System.out.print("Teléfono: ");
+        String telefono = scanner.nextLine();
+        Cliente nuevoCliente = new Cliente(nombre, direccion, telefono);
+        clientes.add(nuevoCliente);
+        System.out.println("Cliente agregado exitosamente.");
+    }
+
+    public static void prepararPizza() {
+        System.out.print("Nombre de la pizza: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Precio: ");
+        double precio = scanner.nextDouble();
+        System.out.print("Stock: ");
+        int stock = scanner.nextInt();
+        Pizza nuevaPizza = new Pizza(nombre, precio, stock);
+        pizzeria.agregarPizzaMenu(nuevaPizza);
+        System.out.println("Pizza agregada exitosamente.");
+    }
+
+    public static void listarPedidos() {
+        for (Pedido pedido : pizzeria.getPedidos()) {
+            System.out.println("Cliente: " + pedido.getCliente().getNombre());
+            for (Pizza pizza : pedido.getPizzas()) {
+                System.out.println(" - " + pizza.getNombre() + " x" + pizza.getStock());
+            }
+            System.out.println("Total: $" + pedido.getTotal());
+        }
+    }
+
+    public static void nuevoPedido() {
+        listarClientes();
+        System.out.print("Seleccione el número del cliente: ");
+        int indiceCliente = scanner.nextInt();
+        Cliente cliente = clientes.get(indiceCliente - 1);
+        Pedido nuevoPedido = new Pedido(cliente);
+
+        listarPizzas();
+        System.out.print("Seleccione el número de la pizza: ");
+        int indicePizza = scanner.nextInt();
+        System.out.print("Cantidad: ");
+        int cantidad = scanner.nextInt();
+        Pizza pizza = pizzeria.getMenu().get(indicePizza - 1);
+        nuevoPedido.agregarPizza(pizza, cantidad);
+
+        pizzeria.registrarPedido(nuevoPedido);
+        System.out.println("Pedido registrado exitosamente.");
+    }
+
+    public static void listarPizzas() {
+        int i = 1;
+        for (Pizza pizza : pizzeria.getMenu()) {
+            System.out.println(
+                    i + ". " + pizza.getNombre() + " - $" + pizza.getPrecio() + " - Stock: " + pizza.getStock());
+            i++;
+        }
+    }
 }

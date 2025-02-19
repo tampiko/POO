@@ -19,12 +19,13 @@ public class Pizzeria {
     }
 
     public void mostrarMenu() {
+        System.out.println("*** Menú de Pizzas ***");
+        System.out.println("");
         for (Pizza pizza : menu) {
             System.out.println(pizza.getNombre() + " - $" + pizza.getPrecio() + " - Stock: " + pizza.getStock());
         }
     }
 
-    // Métodos getters y setters
     public List<Pizza> getMenu() {
         return menu;
     }

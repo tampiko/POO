@@ -28,10 +28,10 @@ public class Extras {
                 System.out.println("Entrada no válida. Por favor, Intente de Nuevo."); // Mensaje de error
             }
         }
-        scanner.close();
+        // scanner.close();
         return numero; // Devolver el número ingresado
     }
-    
+
     public static Integer getNumero(String mensaje) {
         Scanner scanner = new Scanner(System.in);
         Integer numero;
@@ -45,7 +45,7 @@ public class Extras {
                 System.out.println("Entrada no válida. Por favor, Intente de Nuevo."); // Mensaje de error
             }
         }
-        scanner.close();
+        // scanner.close();
         return numero; // Devolver el número ingresado
     }
 }
