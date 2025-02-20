@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Programa {
@@ -12,6 +13,7 @@ public class Programa {
         Extras.limpiarPantalla();
         pizzeria.getMenu().addAll(pizzas);
         pintaBienvenida();
+        // listarPizzas();
 
         do {
             menuPrincipal();
@@ -93,7 +95,7 @@ public class Programa {
             switch (opcionPizza) {
                 case 1:
                     pintaBienvenida();
-                    pizzeria.mostrarMenu();
+                    listarPizzas();
                     break;
                 case 2:
                     prepararPizza();
@@ -223,11 +225,118 @@ public class Programa {
     }
 
     public static void listarPizzas() {
+        List<Integer> largos = Pintaencabezado();
         int i = 1;
         for (Pizza pizza : pizzeria.getMenu()) {
-            System.out.println(
-                    i + ". " + pizza.getNombre() + " - $" + pizza.getPrecio() + " - Stock: " + pizza.getStock());
+            System.out.print(Tabla.VERTICAL);
+            System.out.print(" ");
+            System.out.print(i + ". " + pizza.getNombre());
+            rellenaEspacios(largos.get(0) - pizza.getNombre().length() - 4);
+            System.out.print(Tabla.VERTICAL);
+            System.out.print(" $");
+            rellenaEspacios(largos.get(1) - String.valueOf(pizza.getPrecio()).length() - 3);
+            System.out.print(pizza.getPrecio() + " ");
+            System.out.print(Tabla.VERTICAL);
+            rellenaEspacios(largos.get(2) - String.valueOf(pizza.getStock()).length() - 2);
+            System.out.print(" " + pizza.getStock() + " ");
+            System.out.println(Tabla.VERTICAL);
             i++;
+        }
+        System.out.print(Tabla.BOTTOMLEFT);
+        for (int j = 0; j < largos.get(0); j++) {
+            System.out.print(Tabla.HORIZONTAL);
+        }
+        System.out.print(Tabla.MIDDLEBOTTOM);
+        for (int j = 0; j < largos.get(1); j++) {
+            System.out.print(Tabla.HORIZONTAL);
+        }
+        System.out.print(Tabla.MIDDLEBOTTOM);
+        for (int j = 0; j < largos.get(2); j++) {
+            System.out.print(Tabla.HORIZONTAL);
+        }
+        System.out.println(Tabla.BOTTOMRIGHT);
+
+    }
+
+    public static List<Integer> Pintaencabezado() {
+        List<Integer> largos = new ArrayList<Integer>();
+        String tNombre = "Nombre de la Pizza";
+        String tPrecio = "Precio";
+        String tStock = "Stock";
+        int largoTituloNombre = tNombre.length() + 2;
+        int largoNombre = largoTituloNombre;
+        int largoTituloPrecio = tPrecio.length() + 2;
+        int largoPrecio = largoTituloPrecio;
+        int largoTituloStock = tStock.length() + 2;
+        int largoStock = largoTituloStock;
+
+        for (Pizza pizza : pizzeria.getMenu()) {
+            if (largoNombre < pizza.getNombre().length()) {
+                largoNombre = pizza.getNombre().length();
+            }
+            if (largoPrecio < String.valueOf(pizza.getPrecio()).length()) {
+                largoPrecio = String.valueOf((int) pizza.getPrecio()).length();
+            }
+            if (largoStock < String.valueOf(pizza.getStock()).length()) {
+                largoStock = String.valueOf(pizza.getStock()).length();
+            }
+        }
+
+        // System.out.println("El largoNombre => " + largoNombre + "\t | LArgo
+        // largoTituloNombre => " + largoTituloNombre);
+        // System.out.println("El largoPrecio => " + largoPrecio + "\t | LArgo
+        // largoTituloPrecio => " + largoTituloPrecio);
+        // System.out.println("El largoStock => " + largoStock + "\t | LArgo
+        // largoTituloStock => " + largoTituloStock);
+
+        if (largoNombre > largoTituloNombre) {
+            largoNombre += 2;
+        }
+        if (largoPrecio > largoTituloPrecio) {
+            largoPrecio += 2;
+        }
+        if (largoStock > largoTituloStock) {
+            largoStock += 2;
+        }
+
+        System.out.print(Tabla.TOPLEFT + " " + tNombre + " " + Tabla.MIDDLETOP);
+        if (largoNombre > largoTituloNombre) {
+            rellenaEspacios(largoTituloNombre - largoTituloNombre);
+        }
+        System.out.print(" " + tPrecio + " " + Tabla.MIDDLETOP);
+        if (largoPrecio > largoTituloPrecio) {
+            rellenaEspacios(largoTituloNombre - largoPrecio);
+        }
+        System.out.print(" " + tStock + " ");
+        if (largoStock < largoTituloStock) {
+            rellenaEspacios(largoTituloStock - largoStock);
+        }
+        System.out.println(Tabla.TOPRIGHT);
+        //
+        System.out.print(Tabla.MIDDLELEFT);
+        for (int i = 0; i < largoNombre; i++) {
+            System.out.print(Tabla.HORIZONTAL);
+        }
+
+        System.out.print(Tabla.CENTER);
+        for (int i = 0; i < largoPrecio; i++) {
+            System.out.print(Tabla.HORIZONTAL);
+        }
+        System.out.print(Tabla.CENTER);
+        for (int i = 0; i < largoStock; i++) {
+            System.out.print(Tabla.HORIZONTAL);
+        }
+        System.out.println(Tabla.MIDDLERIGHT);
+        //
+        largos.add(largoNombre);
+        largos.add(largoPrecio);
+        largos.add(largoStock);
+        return largos;
+    }
+
+    private static void rellenaEspacios(int espacios) {
+        for (int i = 0; i < espacios; i++) {
+            System.out.print(" ");
         }
     }
 }

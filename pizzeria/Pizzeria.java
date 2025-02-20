@@ -18,13 +18,14 @@ public class Pizzeria {
         pedidos.add(pedido);
     }
 
-    public void mostrarMenu() {
-        System.out.println("*** Menú de Pizzas ***");
-        System.out.println("");
-        for (Pizza pizza : menu) {
-            System.out.println(pizza.getNombre() + " - $" + pizza.getPrecio() + " - Stock: " + pizza.getStock());
-        }
-    }
+    // public void mostrarMenu() {
+    // System.out.println("*** Menú de Pizzas ***");
+    // System.out.println("");
+    // for (Pizza pizza : menu) {
+    // System.out.println(pizza.getNombre() + " - $" + pizza.getPrecio() + " -
+    // Stock: " + pizza.getStock());
+    // }
+    // }
 
     public List<Pizza> getMenu() {
         return menu;
