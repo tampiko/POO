@@ -1,15 +1,1 @@
-* Bienvenida
-
-* Menu
-    A => Peliculas / Libros / Pokemones / Funciones
- 
-Hay ## elementos
-    C => Crear
-    R => Listar
-    U => Actualizar
-    D => Eliminar
-  
-    B => Buscar
-
-# Función de Limpiar Pantalla
-# * Usar Colores
+Dada una frase, centrarla en un marco o tabla como en el ejemplo

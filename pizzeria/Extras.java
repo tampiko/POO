@@ -48,4 +48,19 @@ public class Extras {
         // scanner.close();
         return numero; // Devolver el número ingresado
     }
+
+    public static void LineaTitulo(String titulo, int cuantos) {
+        AnsiColors.GreenBG_WhiteTxt();
+        for (int i = 0; i < cuantos; i++) {
+            System.out.print("=");
+        }
+
+        System.out.print(" " + titulo + " ");
+        for (int i = 0; i < cuantos; i++) {
+            System.out.print("=");
+        }
+
+        System.out.println();
+        AnsiColors.RESET_COLOR();
+    }
 }

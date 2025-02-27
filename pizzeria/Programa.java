@@ -66,17 +66,18 @@ public class Programa {
 
     public static void pintaBienvenida() {
         System.out.println("");
-        System.out.println("===== Pizzeria \"Delit\" =====");
+        Extras.LineaTitulo("Pizzeria \"Delit\"", 5);
         System.out.println("");
     }
 
     public static void menuPrincipal() {
         System.out.println("     Menu Principal");
         System.out.println("");
-        System.out.println("1. Pizza");
-        System.out.println("2. Clientes");
-        System.out.println("3. Pedidos");
-        System.out.println("4. Salir");
+        AnsiColors.tBlancofVerde();
+        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT + "1" + AnsiColors.RESET + " => Pizza");
+        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT + "2" + AnsiColors.RESET + " => Clientes");
+        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT + "3" + AnsiColors.RESET + " => Pedidos");
+        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT + "4" + AnsiColors.RESET + " => Salir");
         System.out.println("");
     }
 

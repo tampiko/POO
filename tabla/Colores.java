@@ -1,4 +1,4 @@
-public class AnsiColors {
+public class Colores {
     public static final String RESET = "\u001B[0m";
 
     public static final class BLACK {
@@ -40,13 +40,4 @@ public class AnsiColors {
         public static final String TXT = "\u001B[37m";
         public static final String BG = "\u001B[47m";
     }
-
-    public static void RESET_COLOR() {
-        System.out.print(RESET);
-    }
-
-    public static void GreenBG_WhiteTxt() {
-        System.out.print(GREEN.BG + WHITE.TXT);
-    }
-
 }
