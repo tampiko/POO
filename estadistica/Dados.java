@@ -5,8 +5,18 @@ public class Dados {
 
     public static void main(String[] args) {
         System.out.println("* Se hace un tiro un dado y se obtiene la suma.");
-        System.out.println("* Deben registrarse 200 tiros y registrar cuantas veces se obtiene cada suma.");
-        System.out.println("* Al final se deberan mostrar cuantas veces se obtuvo cada suma y su porcentaje.");
+        System.out.println("* Se registran 200 tiros y cuantas veces se obtiene cada suma.");
+        System.out
+                .println("* Al final se deberan mostrar cuantas veces se obtuvo cada suma y su porcentaje graficado.");
+        System.out.println();
+        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT + "MEJORAS" + AnsiColors.RESET);
+        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT + "Solicitar cuantas veces se tirarán los dados."
+                + AnsiColors.RESET);
+        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT
+                + "Agregarle Formato (puede ser color y presentacion)" + AnsiColors.RESET);
+        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT
+                + "Mostrar caracteres tipo grafica de barras horizontal despues de escribir el porcentaje."
+                + AnsiColors.RESET);
 
         ArrayList<int[]> resultados = new ArrayList<>();
 
