@@ -29,7 +29,8 @@ public class Dados {
             int numero = resultado[0];
             int conteo = resultado[1];
             double porcentaje = (conteo / 200.0) * 100;
-            System.out.println("Número " + numero + " salió " + conteo + " veces (" + porcentaje + "%)");
+            System.out.println("Número " + numero + " salió " + conteo + " veces (" + porcentaje + "%) "
+                    + AnsiColors.GREEN.BG + "     " + AnsiColors.RESET);
         }
     }
 
