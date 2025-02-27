@@ -9,13 +9,15 @@ public class Dados {
         System.out
                 .println("* Al final se deberan mostrar cuantas veces se obtuvo cada suma y su porcentaje graficado.");
         System.out.println();
-        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT + "MEJORAS" + AnsiColors.RESET);
-        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT + "Solicitar cuantas veces se tirarán los dados."
+        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT + "===== MEJORAS =====" + AnsiColors.RESET);
+        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT + "[ ] Solicitar cuantas veces se tirarán los dados."
+                + AnsiColors.RESET);
+        System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT + "[ ] Mostrar al final cuantas veces se tiraron los dados."
                 + AnsiColors.RESET);
         System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT
-                + "Agregarle Formato (puede ser color y presentacion)" + AnsiColors.RESET);
+                + "[ ] Agregarle Formato (puede ser color y presentacion)" + AnsiColors.RESET);
         System.out.println(AnsiColors.RED.BG + AnsiColors.WHITE.TXT
-                + "Mostrar caracteres tipo grafica de barras horizontal despues de escribir el porcentaje."
+                + "[ ] Mostrar caracteres tipo grafica de barras horizontal despues de escribir el porcentaje."
                 + AnsiColors.RESET);
 
         ArrayList<int[]> resultados = new ArrayList<>();
